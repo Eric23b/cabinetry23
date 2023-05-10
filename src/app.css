@@ -1,0 +1,189 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/system-color */
+
+/* 
+AccentColor:     Background of accented user interface controls
+AccentColorText: Text of accented user interface controls
+ActiveText:      Text of active links
+ButtonBorder:    Base border color of controls
+ButtonFace:      Background color of controls
+ButtonText:      Text color of controls
+Canvas:          Background of application content or documents
+CanvasText:      Text color in application content or documents
+Field:           Background of input fields
+FieldText:       Text in input fields
+GrayText:        Text color for disabled items (e.g. a disabled control)
+Highlight:       Background of selected items
+HighlightText:   Text color of selected items
+LinkText:        Text of non-active, non-visited links
+Mark:            Background of text that has been specially marked (such as by the HTML mark element)
+MarkText:        Text that has been specially marked (such as by the HTML mark element)
+VisitedText:     Text of visited links
+*/
+
+:root{
+  --accent-color: #007aff;
+  --accent-color-text: #ffffff;
+  --active-text: #ee0000;
+  --button-border: #e3e3e3;
+  --button-face: #e9e9ed;
+  --button-text: #000000;
+  --canvas: #ffffff;
+  --canvas-text: #000000;
+  --field: #ffffff;
+  --field-text: #000000;
+  --gray-text: #6d6d6d;
+  --highlight: #b3d7ff;
+  --highlight-text: #000000;
+  --link-text: #0000ee;
+  --mark: #ffff00;
+  --mark-text: #000000;
+  --visited-text: #551a8b;
+
+	--highlight-background-color-1: #f5b673;
+	--highlight-background-color-2: #fefe79;
+	--highlight-background-color-3: #75fb7a;
+	--highlight-background-color-4: #7bfceb;
+	--highlight-background-color-5: #85bafc;
+	--highlight-background-color-6: #fb82f3;
+	--highlight-background-color-7: #fd8282;
+}
+
+body{
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --accent-color: #007aff;
+    --accent-color-text: #ffffff;
+    --active-text: #ff6666;
+    --button-border: #75747a;
+    --button-face: #2b2a33;
+    --button-text: #fbfbfe;
+    --canvas: #1c1b22;
+    --canvas-text: #fbfbfe;
+    --field: #2b2a33;
+    --field-text: #fbfbfe;
+    --gray-text: #75747a;
+    --highlight: #3f638b;
+    --highlight-text: #fbfbfe;
+    --link-text: #8c8cff;
+    --mark: #ffff00;
+    --mark-text: #000000;
+    --visited-text: #ffadff;
+  }
+
+  body{
+      color-scheme: dark;
+  }
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: var(--canvas-text);
+  background-color: var(--canvas);
+  border-color: var(--button-border);
+}
+
+*{
+  box-sizing: border-box;
+  /* outline-color:  var(--highlight); */
+}
+
+/* -- ALL SCROLL BARS -- */
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--highlight);
+}
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+  width: 0;
+  height: 0;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+  width: 0;
+  height: 0;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--button-face);
+  border-radius: 3px;
+}
+*::-webkit-scrollbar-corner {
+  background: var(--canvas);
+  width: 0;
+  height: 0;
+}
+*::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+*{
+scrollbar-color: var(--button-face) transparent;
+  scrollbar-width: thin;
+}
+
+/* Text Selection */
+*::selection {
+  color: var(--highlight);
+  background-color: var(--highlight-text);
+}
+
+
+/* --- BUTTON --- */
+.std-btn{
+  display: block;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--button-border);
+  border-radius: 3px;
+  color: var(--button-text);
+  background-color: var(--button-face);
+}
+.std-btn:hover{
+  background-color: var(--canvas);
+}
+.std-btn:active{
+  color: var(--highlight-text);
+  background-color: var(--highlight);
+}
+/* .std-btn:focus{
+  outline: 2px solid;
+  outline-offset: -2;
+} */
+
+
+/* --- LABEL --- */
+.std-label{
+  display: block;
+  font-size: 1.2rem;
+}
+
+
+/* --- INPUT --- */
+/* TEXT */
+.std-text-input{
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  color: var(--field-text);
+  background-color: var(--field);
+  border: 1px solid var(--button-border);
+  border-radius: 3px;
+}
+
+
+
+/* UTILITIES */
+.flex-spacer{
+  flex-grow: 1;
+}

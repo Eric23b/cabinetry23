@@ -1,10 +1,17 @@
 <script>
   import ProjectsTab from './lib/ProjectsTab.svelte'
+  import ProjectSummaryTab from './lib/ProjectSummaryTab.svelte'
 	import { onMount } from 'svelte';
+
+  import {initProjectsDB, saveProject, getProject, listProjects} from './lib/js-utilities/db-utilities';
 
   let tabBtns = {}
   let currentTabIndex = 0;
   onMount(async () => {
+    await initProjectsDB();
+    await saveProject({name: 'project1', id: '1.a'});
+    console.log(await getProject('1.a'));
+    console.log(await listProjects());
     // tabBtns.projects.style.color = 'var(--button-text)';
 	});
 
@@ -45,7 +52,7 @@
     {#if currentTabIndex == 0}
       <ProjectsTab/>
     {:else if currentTabIndex == 1}
-      <ProjectsTab/>
+      <ProjectSummaryTab/>
     {/if}
   </section>
   <footer>Status</footer>
@@ -53,9 +60,12 @@
 
 <style>
   main{
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden;
   }
 
   nav{
@@ -83,6 +93,7 @@
   main > section{
     flex-grow: 1;
     position: relative;
+    overflow: auto;
   }
 
   footer{

@@ -13,10 +13,14 @@
   },
   "tauri": {
     "allowlist": {
+      "fs": {
+        "all": true,
+        "scope": ["**"]
+      },
       "dialog": {
         "all": true
       },
-      "all": false
+      "all": true
     },
     "bundle": {
       "active": true,
@@ -63,7 +67,7 @@
         "height": 800,
         "resizable": true,
         "title": "Cabinetry23",
-        "width": 1000
+        "width": 1200
       }
     ]
   }

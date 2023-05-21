@@ -1,3 +1,8 @@
+<script>
+    import Calendar from './utilities/Calendar.svelte'
+
+</script>
+
 <section>
     <table>
         <tr>
@@ -11,32 +16,51 @@
         </tr>
         <tr>
             <td>1.a</td>
-            <td>Bill</td>
-            <td>2023-08-01</td>
-            <td>2023-08-10</td>
-            <td>2023-08-15</td>
+            <td>Aaron</td>
+            <td>2023-05-01</td>
+            <td>2023-05-10</td>
+            <td>2023-05-15</td>
             <td>✓</td>
             <td>✓</td>
         </tr>
         <tr>
-            <td>1.a</td>
-            <td>Bill</td>
-            <td>2023-08-01</td>
-            <td>2023-08-10</td>
-            <td>2023-08-15</td>
+            <td>1.b</td>
+            <td>Aaron</td>
+            <td>2023-05-01</td>
+            <td>2023-05-10</td>
+            <td>2023-05-15</td>
             <td>✓</td>
             <td>✓</td>
         </tr>
         <tr>
-            <td>1.a</td>
+            <td>1.c</td>
+            <td>Aaron</td>
+            <td>2023-05-01</td>
+            <td>2023-05-10</td>
+            <td>2023-05-15</td>
+            <td>✓</td>
+            <td>✓</td>
+        </tr>
+        <tr>
+            <td>2.a</td>
             <td>Bill</td>
-            <td>2023-08-01</td>
-            <td>2023-08-10</td>
-            <td>2023-08-15</td>
+            <td>2023-05-10</td>
+            <td>2023-05-16</td>
+            <td>2023-05-16</td>
             <td>✓</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3.a</td>
+            <td>Carter</td>
+            <td>2023-05-16</td>
+            <td>2023-05-17</td>
+            <td>2023-05-18</td>
             <td>✓</td>
+            <td></td>
         </tr>
     </table>
+    <Calendar/>
 </section>
 
 <style>
@@ -48,6 +72,8 @@
         flex-wrap: nowrap;
         justify-content: flex-start;
         align-items: center;
+        gap: 1rem;
+        padding: 1rem;
     }
 
     table{

@@ -21,6 +21,8 @@ VisitedText:     Text of visited links
 */
 
 :root{
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+
   --accent-color: #007aff;
   --accent-color-text: #ffffff;
   --active-text: #ee0000;
@@ -84,6 +86,11 @@ body{
   color: var(--canvas-text);
   background-color: var(--canvas);
   border-color: var(--button-border);
+  /* overflow: hidden; */
+}
+
+#app{
+  height: 100vh;
 }
 
 *{
@@ -164,7 +171,7 @@ scrollbar-color: var(--button-face) transparent;
 /* --- LABEL --- */
 .std-label{
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 
@@ -178,9 +185,43 @@ scrollbar-color: var(--button-face) transparent;
   color: var(--field-text);
   background-color: var(--field);
   border: 1px solid var(--button-border);
-  border-radius: 3px;
+  border-radius: 0.25rem;
 }
 
+
+/* TEXTAREA */
+.std-textarea{
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  color: var(--field-text);
+  background-color: var(--field);
+  border: 1px solid var(--button-border);
+  border-radius: 0.25rem;
+  resize: none;
+}
+
+
+/* GROUP BOX */
+.group-box{
+  position: relative;
+  width: 100%;
+  max-width: max-content;
+  margin: 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+  border: 1px solid var(--button-border);
+  border-radius: 0.25rem;
+}
+.group-box::before{
+  position: absolute;
+  content: attr(data-title);
+  top: -0.5rem;
+  left: 1rem;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  background-color: var(--canvas);
+}
 
 
 /* UTILITIES */
